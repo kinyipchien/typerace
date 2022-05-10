@@ -5,7 +5,8 @@ import TextButton from './TextButton';
 const buttonTextItems = [
   'Bears, beets, battlestar galactica',
   "What's Forrest Gump's password? 1Forrest1",
-  'Where do programmers like to hangout? The Foo Bar'];
+  'Where do programmers like to hangout? The Foo Bar'
+];
 
 class App extends React.Component {
   constructor(props) {
