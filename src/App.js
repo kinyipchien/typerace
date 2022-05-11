@@ -61,6 +61,7 @@ class App extends React.Component {
         value={this.state.userText}
         onChange={this.updateUserText}
         ref={this.textInput}
+        disabled={this.state.victory}
       />
       <hr />
       {buttonTextItems.map((textItem, index) => (
