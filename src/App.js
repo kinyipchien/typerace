@@ -44,17 +44,19 @@ class App extends React.Component {
   render = () => (
     <div className="App">
       <h2>Type Race</h2>
-      {this.state.snippet}
-      <h4>{
-        this.state.highScore
-        ? `High Score: ${this.state.highScore}ms`
-        : null
-      }</h4>
-      <h4>{
-        this.state.victory
-        ? `Done! Woot! Time: ${this.state.endTime}ms`
-        : null
-      }</h4>
+      <hr />
+      {this.state.snippet ? (
+        <div>
+          <h3>Snippet</h3>
+          <div>{this.state.snippet}</div>
+        </div>
+      ) : null}
+      {this.state.highScore
+        ? <h4>{`High Score: ${this.state.highScore}ms`}</h4>
+        : null}
+      {this.state.victory
+        ? <h4>{`Done! Woot! Time: ${this.state.endTime}ms`}</h4>
+        : null}
       <input
         value={this.state.userText}
         onChange={this.updateUserText}
