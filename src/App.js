@@ -15,9 +15,19 @@ class App extends React.Component {
     this.textInput = React.createRef();
   }
 
+  chooseSnippet = (index) => {
+    this.setState({
+      snippet: buttonTextItems[index],
+      startTime: new Date().getTime(),
+      userText: '',
+      victory: false,
+    });
+    this.textInput.current.focus();
+  };
+
   updateUserText = (e) => {
     this.setState({ userText: e.target.value });
-    if (e.target.value === this.state.snippet) {
+    if (e.target.value && e.target.value === this.state.snippet) {
       const endTime = new Date().getTime() - this.state.startTime;
       this.setState({
         highScore: (
@@ -29,16 +39,6 @@ class App extends React.Component {
         endTime,
       });
     }
-  };
-
-  chooseSnippet = (index) => {
-    this.setState({
-      snippet: buttonTextItems[index],
-      startTime: new Date().getTime(),
-      userText: '',
-      victory: false,
-    });
-    this.textInput.current.focus();
   };
 
   render = () => (
